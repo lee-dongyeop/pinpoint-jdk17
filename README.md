@@ -40,7 +40,7 @@ curl -O https://github.com/pinpoint-apm/pinpoint/releases/tag/v3.0.0/pinpoint-co
 chmod +x pinpoint-collector-3.0.0-exec.jar
 nohup java -jar -Dpinpoint.zookeeper.address=localhost pinpoint-collector-3.0.0-exec.jar >/dev/null 2>&1 &
 
-# 본인의 경우 jar 파일 실행에 오류가 발생하였고, 웹 브라우저에서 아래 주소에 직접 접속하여 다운로드 하였음.
+# 본인의 경우 jar 파일 실행에 오류가 발생하였고, 웹 브라우저에서 아래 주소에 직접 접속하여 다운로드 하였음.
 # https://github.com/pinpoint-apm/pinpoint/releases/tag/v3.0.0/pinpoint-collector-3.0.0-exec.jar
 ```
 
@@ -57,7 +57,7 @@ curl -O https://github.com/pinpoint-apm/pinpoint/releases/tag/v3.0.0/pinpoint-we
 chmod +x pinpoint-web-3.0.0-exec.jar
 nohup java -jar -Dpinpoint.zookeeper.address=localhost pinpoint-web-3.0.0-exec.jar >/dev/null 2>&1 &\n
 
-# 본인의 경우 jar 파일 실행에 오류가 발생하였고, 웹 브라우저에서 아래 주소에 직접 접속하여 다운로드 하였음.
+# 본인의 경우 jar 파일 실행에 오류가 발생하였고, 웹 브라우저에서 아래 주소에 직접 접속하여 다운로드 하였음.
 # https://github.com/pinpoint-apm/pinpoint/releases/tag/v3.0.0/pinpoint-web-3.0.0-exec.jar
 ```
 
@@ -79,7 +79,7 @@ cd pinpoint-agent-3.0.0
 vi pinpoint-root.config
 
 # ip와 rate 수정
-profiler.transport.grpc.collector.ip={pinpoint ip} # default : 127.0.0.1
+profiler.transport.grpc.collector.ip={pinpoint ip} # default : 127.0.0.1이므로 Collector가 설치된 서버의 공인IP 입력
 profiler.sampling.counting.sampling-rate=100       # default : 100 (=100% 전송)
 ```
 
@@ -93,7 +93,7 @@ profiler.sampling.counting.sampling-rate=100       # default : 100 (=100% 전송
 
 ```bash
 nohup java -jar -javaagent:/{$PINPOINT_AGENT_PATH}/pinpoint-agent-3.0.0/pinpoint-bootstrap-3.0.0.jar \
--Djasypt.encryptor.password={$password} -Dpinpoint.agentId=local-MG-health \
+-Djasypt.encryptor.password={$JASYPT_PASSWORD} -Dpinpoint.agentId=local-MG-health \
 -Dpinpoint.applicationName=local-MG-health-01 \
 {$JAR_PATH}/songareeit.api.health.jar > nohup.out 2>&1 &
 ```
