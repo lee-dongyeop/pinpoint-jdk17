@@ -1,7 +1,7 @@
 # pinpoint-jdk17
 
-- Pinpoint APM 구축기(With JDK 17) - [참고자료](https://coor.tistory.com/66)
-- Mac OS를 기준으로 작성되었으며, Ubuntu와 같은 Linux 계열에서는 명령어가 다를 수 있음
+- Pinpoint APM 구축기(Using JDK 17) - [참고자료](https://coor.tistory.com/66)
+- Mac OS를 기준으로 작성되었습니다.
 
 <Br/>
 
